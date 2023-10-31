@@ -1,16 +1,16 @@
 const express = require("express");
 const router = express.Router();
 
-const {createTodo} = require("../controllers/createTodo");
-const {getTodo,getTodoById} = require("../controllers/getTodo");
-const {updateTodo} = require("../controllers/updateTodo");
-const {deleteTodo} = require("../controllers/deleteTodo")
+const {createBook} = require("../controllers/createBook");
+const {getBook,getBookById} = require("../controllers/getBook");
+const {updateBook} = require("../controllers/updateBook");
+const {deleteBook} = require("../controllers/deleteBook")
 
 //define api route
-router.post("/createTodo",createTodo);
-router.get("/getTodo",getTodo)
-router.get("/getTodo/:id",getTodoById)
-router.put("/updateTodo/:id",updateTodo)
-router.delete("/deleteTodo/:id",deleteTodo)
+router.post("/createBook",createBook);
+router.get("/getBook",getBook)
+router.get("/getBook/:id",getBookById)
+router.put("/updateBook/:id",updateBook)
+router.delete("/deleteBook/:id",deleteBook)
 module.exports = router;
 

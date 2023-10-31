@@ -1,5 +1,5 @@
 {
-  "name": "to-do-app",
+  "name": "backend-challenge",
   "version": "1.0.0",
   "description": "Book managment api using express.js",
   "main": "index.js",
@@ -15,5 +15,6 @@
     "express": "^4.18.2",
     "mongoose": "^7.4.1",
     "nodemon": "^3.0.1"
-  }
+  },
+  "devDependencies": {}
 }

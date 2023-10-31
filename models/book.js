@@ -12,8 +12,8 @@ const bookSchema = new mongoose.Schema(
             required:true,
             maxLength:50
         },
-        summary: {
-            type: Date,
+        description: {
+            type: String,
             required: true,
         }
     }

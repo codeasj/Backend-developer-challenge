@@ -1,12 +1,12 @@
-const Todo = require("../models/book")
+const Book = require("../models/book")
 
-exports.updateTodo = async(req,res) => {
+exports.updateBook = async(req,res) => {
     try{
         const {id} = req.params;
-        const {title,description} = req.body;
-        const books = await Todo.findByIdAndUpdate(
+        const {title,author,description} = req.body;
+        const books = await Book.findByIdAndUpdate(
             { _id: id},
-            {title,description,updatedAt: Date.now()}
+            {title,author,description}
         )
 
         if(!books) {
@@ -19,7 +19,7 @@ exports.updateTodo = async(req,res) => {
 
         res.status(200).json({
             success:true,
-            data:todo,
+            data:books,
             message: "Entry updated succesfully"
         })
     }

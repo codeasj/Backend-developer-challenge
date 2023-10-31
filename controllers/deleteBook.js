@@ -1,14 +1,10 @@
 const Book = require("../models/book")
 
-exports.deleteTodo = async(req,res) => {
+exports.deleteBook = async(req,res) => {
     try{
         const {id} = req.params;
         const books = await Book.findByIdAndDelete({_id:id});
-        res.status(200).json({
-            success:true,
-            message:"Book data deleted succesully"
-        })
-
+        
         if(!books) {
             res.status(404).json({
                 success:false,
@@ -16,9 +12,15 @@ exports.deleteTodo = async(req,res) => {
             })
             return;
         }
+
+        res.status(200).json({
+            success:true,
+            message:"Book data deleted succesfully"
+        })
+
     }
     catch(err){
-        console.error(error);
+        console.error(err);
         res.status(500).json({
             success:false,
             error:err.message,

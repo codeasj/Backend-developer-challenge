@@ -21,7 +21,7 @@ exports.getBook = async (req,res) => {
 }
 
 //get single todo
-exports.getTodoById = async (req,res) => {
+exports.getBookById = async (req,res) => {
     try{
         const id = req.params.id;
         const books = await Book.findById({_id:id});
