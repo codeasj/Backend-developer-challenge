@@ -1,13 +1,22 @@
-const Todo = require("../models/Todo")
+const Todo = require("../models/book")
 
 exports.updateTodo = async(req,res) => {
     try{
         const {id} = req.params;
         const {title,description} = req.body;
-        const todo = await Todo.findByIdAndUpdate(
+        const books = await Todo.findByIdAndUpdate(
             { _id: id},
             {title,description,updatedAt: Date.now()}
         )
+
+        if(!books) {
+            res.status(404).json({
+                success:false,
+                message: `No data found with id: ${id}`
+            })
+            return;
+        }
+
         res.status(200).json({
             success:true,
             data:todo,

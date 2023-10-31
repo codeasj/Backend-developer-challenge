@@ -1,7 +1,7 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
-  "description": "To do app api using express.js",
+  "description": "Book managment api using express.js",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

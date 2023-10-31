@@ -1,28 +1,22 @@
 const mongoose = require("mongoose")
 
-const todoSchema = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
         title: {
             type:String,
             required:true,
             maxLength:50
         },
-        description: {
+        author: {
             type:String,
             required:true,
             maxLength:50
         },
-        createdAt: {
+        summary: {
             type: Date,
             required: true,
-            default: Date.now()
-        },
-        updatedAt: {
-            type:Date,
-            required:true,
-            default: Date.now()
         }
     }
 )
 
-module.exports = mongoose.model("Todo", todoSchema);
+module.exports = mongoose.model("Book", bookSchema);

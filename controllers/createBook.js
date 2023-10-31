@@ -1,13 +1,13 @@
 //import the model
-const Todo = require("../models/Todo")
+const Book = require("../models/book")
 
 //Define Route handler
-exports.createTodo = async(req,res) => {
+exports.createBook = async(req,res) => {
     try {
-        //Extract title and description from request body
-        const {title,description} = req.body;
+        //Extract title, author and description from request body
+        const {title,author,description} = req.body;
         //create a new todo obj and insert in db
-        const response = await Todo.create({title,description});
+        const response = await Book.create({title,author,description});
         //Send a json response with a success flag
         res.status(200).json(
             {
